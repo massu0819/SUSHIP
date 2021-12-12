@@ -1,29 +1,59 @@
-<h2>Sign up</h2>
+<div class="wrappers">
+ <div class="container">
+　<h1>Sign up</h1>
+  <form>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+     <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+     <div class="field">
+       <%= f.email_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム" %>
+     </div>
 
-<%= render "public/shared/links" %>
+     <div class="field">
+　     <%= f.email_field :age, autofocus: true, autocomplete: "age", placeholder: "年齢", class: "age" %>
+     </div>
+
+
+
+     <div class="field">
+       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+     </div>
+
+     <div class="field">
+       <% if @minimum_password_length %>
+       <em>(<%= @minimum_password_length %> characters minimum)</em>
+       <% end %><br />
+       <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+     </div>
+
+     <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password" %>
+     </div>
+
+     <div class="actions">
+       <%= f.submit "Sign up" %>
+     </div>
+   <% end %>
+   </form>
+   <%= render "public/shared/links" %>
+
+ </div>
+
+ <ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+ </ul>
+</div>

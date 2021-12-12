@@ -11,5 +11,16 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
+  namespace :admin do
+    resources :posts, only: [:index, :destroy]
+    resources :customers, only: [:index, :destroy]
+  end
+  scope module: :public do
+    get  "homes/about"  => "homes#about"
+    root :to => 'homes#top'
+    resources :posts
+    resources :customers, only: [:show, :edit, :update, :index]
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

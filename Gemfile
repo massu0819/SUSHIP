@@ -70,3 +70,4 @@ gem 'kaminari'
 gem 'pry-byebug'
 gem 'rubocop', require:false
 gem 'rubocop-rails', require:false
+gem 'font-awesome-sass', '~> 5.13'
