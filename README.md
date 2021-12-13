@@ -2,9 +2,9 @@
 
 ## サイト概要
 お寿司屋さんの情報や感想を投稿し、その投稿についての感想なども共有できるサイトです。
-機能としましては、投稿に対していいね機能を実装し、いいねが多い順でユーザーを表示して、  
+機能としましては、投稿に対していいね機能を実装し、いいねが多い順でユーザーを表示して、
 ユーザーの信用度などを明確に表示します。
-また、初めて訪れるお店でも行きたく思わせるように各ユーザーの年齢と性別を表示し、  
+また、初めて訪れるお店でも行きたく思わせるように各ユーザーの年齢と性別を表示し、
 お店をどのような属性の人が利用しているかを一目でわかるようにしています。
 
 
@@ -22,7 +22,11 @@
 人気のお店や、入ったことのないお店の雰囲気や情報を知りたいとき。
 
 ## 設計書
-
+アプリケーション詳細設計(https://docs.google.com/spreadsheets/d/18ifXx5tTNqHYLK7kKS99guwMexVx1aIPP6dNDCXz6IY/edit?usp=sharing)
+テーブル定義書(https://docs.google.com/spreadsheets/d/18Hr834Q6bVZA5JreCwlsBSdTrrhTzlPMR86oqhTlRLQ/edit?usp=sharing)
+ユーザーフレーム(https://drive.google.com/file/d/1lCkHGa_PHN9APLF-W8bPGFid6ekT3wgJ/view?usp=sharing)
+ER図(https://drive.google.com/file/d/1GivPUy-kZYnSwuNRScWbaXlKiWw8Z0uI/view?usp=sharing)
+遷移図(https://drive.google.com/file/d/1cViU3DXPt3I6aRRyTLBaaEHRzLr-wPv2/view?usp=sharing)
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1vSxBVxbBo0w7INCNQ0rswIqd1pzllGF80CeJMNsuoSg/edit?usp=sharing

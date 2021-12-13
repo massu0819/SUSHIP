@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="container">
+    <h1><strong>NEW POST</strong></h1>
+    <form>
+
+    <%= form_with model:@post, url:posts_path, local:true do |f| %>
+      <table style = "margin-left: 160px;">
+        <tr>
+　　　　　<td></td>
+          <td><%= f.text_field :name, autofocus: true, placeholder: "レストラン名" %></td>
+        </tr>
+
+        <tr>
+            <td class="text"><%= f.label :イメージ %></td>
+            <td><%= f.attachment_field :postimage, autofocus: true %></td>
+        </tr>
+
+
+        <tr>
+          <td></td>
+          <td><%= f.text_field :address, autofocus: true, placeholder: "所在地" %></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td><%= f.text_field :address, autofocus: true, placeholder: "キャプション" %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="actions">
+              <%= f.submit "投稿" %>
+            </div>
+          </td>
+        </tr>
+       </table>
+    <% end %>
+    </form>
+  </div>
+
+ <ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+ </ul>
+</div>
