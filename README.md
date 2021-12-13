@@ -22,10 +22,10 @@
 人気のお店や、入ったことのないお店の雰囲気や情報を知りたいとき。
 
 ## 設計書
-アプリケーション詳細設計(https://docs.google.com/spreadsheets/d/18ifXx5tTNqHYLK7kKS99guwMexVx1aIPP6dNDCXz6IY/edit?usp=sharing)
-テーブル定義書(https://docs.google.com/spreadsheets/d/18Hr834Q6bVZA5JreCwlsBSdTrrhTzlPMR86oqhTlRLQ/edit?usp=sharing)
-ユーザーフレーム(https://drive.google.com/file/d/1lCkHGa_PHN9APLF-W8bPGFid6ekT3wgJ/view?usp=sharing)
-ER図(https://drive.google.com/file/d/1GivPUy-kZYnSwuNRScWbaXlKiWw8Z0uI/view?usp=sharing)
+アプリケーション詳細設計(https://docs.google.com/spreadsheets/d/18ifXx5tTNqHYLK7kKS99guwMexVx1aIPP6dNDCXz6IY/edit?usp=sharing)  
+テーブル定義書(https://docs.google.com/spreadsheets/d/18Hr834Q6bVZA5JreCwlsBSdTrrhTzlPMR86oqhTlRLQ/edit?usp=sharing)  
+ユーザーフレーム(https://drive.google.com/file/d/1lCkHGa_PHN9APLF-W8bPGFid6ekT3wgJ/view?usp=sharing)  
+ER図(https://drive.google.com/file/d/1GivPUy-kZYnSwuNRScWbaXlKiWw8Z0uI/view?usp=sharing)  
 遷移図(https://drive.google.com/file/d/1cViU3DXPt3I6aRRyTLBaaEHRzLr-wPv2/view?usp=sharing)
 
 ## チャレンジ要素一覧
