@@ -71,3 +71,7 @@ gem 'pry-byebug'
 gem 'rubocop', require:false
 gem 'rubocop-rails', require:false
 gem 'font-awesome-sass', '~> 5.13'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
