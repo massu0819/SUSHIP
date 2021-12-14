@@ -1,10 +1,10 @@
 <div class="wrappers">
  <div class="container">
-　<h1>Sign up</h1>
-  <form>
+　<h1>Sign upe</h1>
 
 
-   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+   <%= form_for(resource, url: customer_registration_path) do |f| %>
      <%= render "public/shared/error_messages", resource: resource %>
 
 
@@ -39,7 +39,6 @@
        <%= f.submit "Sign up" %>
      </div>
    <% end %>
-   </form>
    <%= render "public/shared/links" %>
 
  </div>
