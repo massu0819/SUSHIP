@@ -26,7 +26,22 @@ body{
     padding-bottom: 10px;
   }
 }
+.top-visual{
+  width: 100%;
+  height: 427px;
+  background-color: rgba(0,0,0,0.5);
 
+
+
+  .visual-image{
+    background-image: image-url("1425915_s.jpg");
+    width: 640px;
+    height: 427px;
+    margin: auto;
+
+
+  }
+}
 .wrapper{
   background: #50a3a2;
 background: -webkit-linear-gradient(top left, #666666 0%, #cccccc 100%);
