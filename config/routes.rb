@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
+    get 'search' => 'posts#search'
     resources :customers, only: [:show, :edit, :update, :index]
   end
 
