@@ -15,7 +15,7 @@
                    <tbody>
                      <tr>
                        <td><%= attachment_image_tag(@post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>
-                       <td><p class="card-title"><%= @post.name %></p></td>
+                       <td><p class="card-title"><%= @post.customer.name %></p></td>
                        <td>（<%= @post.customer.age %>）</td>
                        <td><%= @post.customer.gender %></td>
 
