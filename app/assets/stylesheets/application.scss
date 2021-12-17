@@ -90,7 +90,13 @@ background: linear-gradient(to bottom right, #666666 0%, #cccccc 100%);
     }
   }
 }
-
+.table{
+    background: #50a3a2;
+background: -webkit-linear-gradient(top left, #666666 0%, #cccccc 100%);
+background: -moz-linear-gradient(top left, #666666 0%, #cccccc 100%);
+background: -o-linear-gradient(top left, #666666 0%, #cccccc 100%);
+background: linear-gradient(to bottom right, #666666 0%, #cccccc 100%);
+}
 .container{
   max-width: 800px;
   margin: 0 auto;
@@ -121,6 +127,39 @@ form{
   }
 
   input{
+    display: block;
+    appearance: none;
+    outline: 0;
+    border: 1px solid fade(white, 40%);
+    background-color: rgba(255,255,255,0.2);
+
+
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 20px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+
+    color: grey;
+
+    transition-duration: 0.25s;
+    font-weight: 700;
+
+    &:hover{
+      background-color: fade(white, 40%);
+    }
+
+    &:focus{
+      background-color: white;
+      width: 300px;
+
+      color: prim;
+
+    }
+  }
+
+  textarea{
     display: block;
     appearance: none;
     outline: 0;

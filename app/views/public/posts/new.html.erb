@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="container">
     <h1><strong>NEW POST</strong></h1>
-    <form>
 
     <%= form_with model:@post, url:posts_path, local:true do |f| %>
       <table style = "margin-left: 160px;">
@@ -23,7 +22,7 @@
 
         <tr>
           <td></td>
-          <td><%= f.text_field :address, autofocus: true, placeholder: "キャプション" %></td>
+          <td><%= f.text_area :caption, autofocus: true, placeholder: "キャプション" %></td>
         </tr>
         <tr>
           <td></td>
@@ -35,19 +34,7 @@
         </tr>
        </table>
     <% end %>
-    </form>
   </div>
 
- <ul class="bg-bubbles">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
- </ul>
+
 </div>

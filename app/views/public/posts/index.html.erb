@@ -2,13 +2,9 @@
    <div class="contents-title text-center">
      <h3>投稿一覧</h3>
      <%= render 'select_form' %>
-     <div class="row">
-         <!--<div class="col-12 col-md-6 col-lg-4">-->
          　<% @posts.each do |post| %>
            <div class="card">
-             <!--<img class="card-img-top" src="https://picsum.photos/30/20.jpg" alt="画像">-->
              <%= attachment_image_tag post, :postimage, class: "bd-placeholder-img card-img-top" %>
-             <!--, size: "180x120"-->
                <div class="card-body">
                  <p class="card-title">店名：<%= post.name %></p>
                  <p>住所：<%= post.address %></p>
@@ -31,7 +27,5 @@
                </div>
            </div>
            <% end %>
-         </div>
-     </div>
    </div>
  </div>

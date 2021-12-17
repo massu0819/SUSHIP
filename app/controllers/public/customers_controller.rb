@@ -6,14 +6,23 @@ class Public::CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customers.all
+    @customers = Customer.all
   end
-  
+
   def edit
     @customer = Customer.find(params[:id])
     if @customer.id == current_customer.id
     else
        redirect_to customer_path(current_customer.id)
+    end
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+       redirect_to customer_path(@customer.id)
+    else
+      render :edit
     end
   end
 

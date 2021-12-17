@@ -32,9 +32,9 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = post.all
+    @posts = Post.all
   end
-  
+
   def search
     selection = params[:keyword]
     @posts = Post.sort(selection)
