@@ -1,0 +1,21 @@
+<div>
+  <h1>POSTS</h1>
+</div>
+
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th>投稿者名</th>
+      <th>店名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><td><%= post.customer.name %></td></td>
+        <td><%= post.name %></td>
+        <td><%= link_to '削除', admin_post_path(post.id), method: :delete, class:"btn btn-danger btn-sm btn-block mb-3" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

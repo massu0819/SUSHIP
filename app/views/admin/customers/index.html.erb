@@ -1,0 +1,24 @@
+<div>
+  <h1>USERS</h1>
+</div>
+
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>ニックネーム</th>
+      <th>投稿数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><td><%= attachment_image_tag(customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td></td>
+        <td><%= customer.nickname %></td>
+        <td><%= customer.posts.count %></td>
+        <td><%= link_to '削除', admin_customer_path(customer.id), method: :delete, class:"btn btn-danger btn-sm btn-block mb-3" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
