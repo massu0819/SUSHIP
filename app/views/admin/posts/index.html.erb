@@ -12,7 +12,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><td><%= post.customer.name %></td></td>
+        <td><td><%= post.customer.nickname %></td></td>
         <td><%= post.name %></td>
         <td><%= link_to '削除', admin_post_path(post.id), method: :delete, class:"btn btn-danger btn-sm btn-block mb-3" %></td>
       </tr>

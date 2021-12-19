@@ -6,7 +6,7 @@
          <!--<div class="col-12 col-md-6 col-lg-4">-->
            <div class="card">
              <!--<img class="card-img-top" src="https://picsum.photos/30/20.jpg" alt="画像">-->
-             <%= attachment_image_tag post, :postimage, class: "bd-placeholder-img card-img-top" %>
+             <%= attachment_image_tag @post, :postimage, class: "bd-placeholder-img card-img-top" %>
              <!--, size: "180x120"-->
                <div class="card-body">
                  <p class="card-title">店名：<%= @post.name %></p>
@@ -15,12 +15,12 @@
                    <tbody>
                      <tr>
                        <td><%= attachment_image_tag(@post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>
-                       <td><p class="card-title"><%= @post.customer.name %></p></td>
+                       <td><p class="card-title"><%= @post.customer.nickname %></p></td>
                        <td>（<%= @post.customer.age %>）</td>
                        <td><%= @post.customer.gender %></td>
 
                        <td id="favorite_buttons_<%= @post.id %>">
-                         <%= render "favorites/favorite", post: @post %>
+                         <%= render "public/favorites/favorites", post: @post %>
                        </td>
                      </tr>
                    </tbody>

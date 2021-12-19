@@ -114,6 +114,7 @@ background: linear-gradient(to bottom right, #666666 0%, #cccccc 100%);
 }
 
 
+
 form{
   padding: 10px 0;
   position: relative;
@@ -210,7 +211,16 @@ form{
     }
   }
 }
+.img-responsive {
+  display: block;
+  // height: 100%;
+  width: 100%;
+}
+.post-image{
+  height: 100px;
+  width: 100px;
 
+}
 .bg-bubbles{
   position: absolute;
   top: 0;

@@ -8,9 +8,11 @@ class Post < ApplicationRecord
   validates :address, presence: true
   validates :postimage, presence: true
   validates :caption, presence: true
-  
-  
-  
+
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
+
   def self.sort(selection)
     case selection
     when 'new'
@@ -23,9 +25,9 @@ class Post < ApplicationRecord
       return find(Favorite.group(:post_id).order(Arel.sql('count(post_id) asc')).pluck(:post_id))
     end
   end
-  
-  
-  
-  
-  
+
+
+
+
+
 end
