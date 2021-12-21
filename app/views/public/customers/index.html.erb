@@ -1,4 +1,4 @@
-<div>
+<div style="text-align: center; margin: 30px 0; color: white; background-color: rgba(0,0,0,0.5);">
   <h1>USERS</h1>
 </div>
 
@@ -16,7 +16,11 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><td><%= attachment_image_tag(customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td></td>
-        <td><%= customer.nickname %></td>
+        <td>
+          <%= link_to customer_path(customer.id) do %>
+          　<%= customer.nickname %>
+          <% end %>
+        </td>
         <td><%= customer.gender %></td>
         <td><%= customer.posts.count %></td>
       </tr>

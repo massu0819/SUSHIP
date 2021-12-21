@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     get 'search' => 'posts#search'
+    get 'searching' => 'posts#searching'
     resources :customers, only: [:show, :edit, :update, :index]
   end
 

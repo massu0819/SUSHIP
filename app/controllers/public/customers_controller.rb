@@ -1,8 +1,10 @@
 class Public::CustomersController < ApplicationController
 
+  
+
   def show
     @customer = Customer.find(params[:id])
-    @posts = customer.posts
+    @posts = @customer.posts
   end
 
   def index
@@ -25,6 +27,8 @@ class Public::CustomersController < ApplicationController
       render :edit
     end
   end
+
+
 
   def customer_params
     params.require(:customer).permit(:nickname, :profile_image, :introduction)

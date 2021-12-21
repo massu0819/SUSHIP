@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_11_050443) do
+ActiveRecord::Schema.define(version: 2021_12_21_045003) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_12_11_050443) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "nickname"
+    t.string "nickname", null: false
     t.string "profile_image_id"
-    t.integer "age"
-    t.boolean "gender"
+    t.integer "age", null: false
+    t.integer "gender", null: false
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,12 +58,13 @@ ActiveRecord::Schema.define(version: 2021_12_11_050443) do
 
   create_table "posts", force: :cascade do |t|
     t.string "postimage_id"
-    t.string "name"
-    t.string "address"
-    t.text "caption"
+    t.string "name", null: false
+    t.string "address", null: false
+    t.text "caption", null: false
     t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "evaluation"
   end
 
 end

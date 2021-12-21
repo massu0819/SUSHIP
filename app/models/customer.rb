@@ -8,6 +8,8 @@ class Customer < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   
+  enum gender: { man: 1, woman: 2 }
+  
   attachment :profile_image
   validates :introduction, presence: false, length: { maximum: 50 }
   validates :nickname, presence: true, uniqueness: true

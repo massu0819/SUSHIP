@@ -5,7 +5,7 @@ class Admin::CustomersController < ApplicationController
   end
 
   def destroy
-    @customer = customer.find(params[:id])
+    @customer = Customer.find(params[:id])
     if @customer.destroy
       redirect_back(fallback_location: root_path)
     end

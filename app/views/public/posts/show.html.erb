@@ -1,7 +1,9 @@
 <div class="texts-wrapper">
    <div class="contents-title text-center">
-     <h3>投稿詳細</h3>
-     <div class="row">
+     <div style="text-align: center; margin: 30px 0; color: white; background-color: rgba(0,0,0,0.5);">
+       <h1><strong>投稿詳細</strong></h1>
+     </div>
+     <div class="main">
         <!--新着投稿3つ-->
          <!--<div class="col-12 col-md-6 col-lg-4">-->
            <div class="card">
@@ -9,50 +11,42 @@
              <%= attachment_image_tag @post, :postimage, class: "bd-placeholder-img card-img-top" %>
              <!--, size: "180x120"-->
                <div class="card-body">
-                 <p class="card-title">店名：<%= @post.name %></p>
-                 <p>住所：<%= @post.address %></p>
+                 <p class="card-title"><strong>店名</strong>：<%= @post.name %></p>
+                 <p><strong>住所</strong>：<%= @post.address %></p>
                  <table>
                    <tbody>
                      <tr>
                        <td><%= attachment_image_tag(@post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>
-                       <td><p class="card-title"><%= @post.customer.nickname %></p></td>
+                       <td><p class="card-title"><strong><%= @post.customer.nickname %></strong></p></td>
                        <td>（<%= @post.customer.age %>）</td>
                        <td><%= @post.customer.gender %></td>
 
                        <td id="favorite_buttons_<%= @post.id %>">
                          <%= render "public/favorites/favorites", post: @post %>
                        </td>
+                       <td class="post-evaluation" data-score="<%= @post.evaluation %>"></td>
                      </tr>
                    </tbody>
                  </table>
-                 <p>caption</p>
+                 <script>
+                   $('.post-evaluation').raty({
+                     readOnly: true,
+                     score: function() {
+                       return $(this).attr('data-score');
+                     },
+                     path: '/assets/'
+                   });
+                 </script>
+                 <p><strong>caption</strong></p>
                  <div><%= @post.caption %></div>
-                 <table>
-                   <tbody>
-                    <% @post.comments.each do |comment| %>
-                    <tr>
-                      <td>
-                        <%= attachment_image_tag comment.customer, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size:"40x40" %><br>
-                        <%= comment.user.name %>
-                      </td>
-                      <td><%= comment.comment %></td>
-                      <td>
-                        <% if comment.customer == current_customer %>
-                      <div>
-                        <%= link_to "削除", post_comment_path(post_comment.post, post_comment), method: :delete, class:"btn btn-danger btn-sm btn-block mb-9" %>
-                      </div>
-                        <% end %>
-                      </td>
-                    </tr>
-                    <% end %>
-                   </tbody>
-                 </table>
-                  <div>
-      　            <%= form_with model:[@post,@comment] do |f| %>
-      　              <%= f.text_area :comment, size:"90x5"%>
-                 　　 <%= f.submit '送信'%>
-　　　           　<% end %>
-                  </div>
+                 <!--コメント一覧部分-->
+                    <!--divタグのclassをid="comments_area"に変更-->
+                 <div id="comments_area">
+                   <%= render 'public/comments/post_comments', post: @post %>
+                 </div>
+                 <div class="new-comment">
+                   <%= render 'public/comments/form', post: @post, comment: @comment %>
+                 </div>
                </div>
            </div>
          </div>

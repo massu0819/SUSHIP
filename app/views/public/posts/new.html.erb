@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrappers">
   <div class="container">
     <h1><strong>NEW POST</strong></h1>
 
@@ -27,6 +27,14 @@
         <tr>
           <td></td>
           <td>
+            <div id="evaluate_stars">
+              <label>評価</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
             <div class="actions">
               <%= f.submit "投稿" %>
             </div>
@@ -34,6 +42,14 @@
         </tr>
        </table>
     <% end %>
+    <script>
+      $('#evaluate_stars').raty({
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        scoreName: 'post[evaluation]' //登録するモデル名とカラム名を記述
+      });
+    </script>
   </div>
 
 

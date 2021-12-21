@@ -3,7 +3,7 @@
 <div class="wrappers">
 
  <div class="container">
-　<h1>Sign upe</h1>
+　<h1>Sign up</h1>
 
 
 
@@ -20,6 +20,13 @@
 　     <%= f.text_field :age, autofocus: true, autocomplete: "age", placeholder: "年齢", class: "age" %>
      </div>
 
+     <div class="gender">
+      <%= f.label :"性別" %><br />
+      <%= f.label :man %><%= f.radio_button :gender, :man %>
+
+      <%= f.label :woman %><%= f.radio_button :gender, :woman %>
+
+     </div>
 
 
      <div class="field">
@@ -46,16 +53,4 @@
 
  </div>
 
- <ul class="bg-bubbles">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
- </ul>
 </div>

@@ -1,13 +1,18 @@
-<h2>PROFILE EDIT</h2>
+<div class="wrapper">
+  <div class="container">
 
-<%= form_with model:@customer, local:true do |f| %>
-  <%= f.label :nickname, "ニックネーム" %>
-  <%= f.text_field :nickname, autofocus: true %>
-  <%= attachment_image_tag @nickname, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-  <%= f.label :profile_image, "プロフィールイメージ" %>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+    <h2>PROFILE EDIT</h2>
 
-  <%= f.label :introduction, "自己紹介" %>
-  <%= f.text_field :introduction, id:"inputIntroduction" %>
-  <%= f.submit "更新" %>
-<% end %>
+    <%= form_with model:@customer, local:true do |f| %>
+      <%= f.label :nickname, "ニックネーム" %>
+      <%= f.text_field :nickname, autofocus: true %>
+      <%= attachment_image_tag @nickname, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+      <%= f.label :profile_image, "プロフィールイメージ" %>
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+
+      <%= f.label :introduction, "自己紹介" %>
+      <%= f.text_field :introduction, id:"inputIntroduction" %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+</div>

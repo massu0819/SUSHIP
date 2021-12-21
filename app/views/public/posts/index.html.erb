@@ -1,9 +1,20 @@
 <div class="containers">
+ <div style="text-align: center; margin: 30px 0; color: white; background-color: rgba(0,0,0,0.5);">
+  <h1><strong>POSTS</strong></h1>
+ </div>
+ <div class="searching">
+ 　　<%= form_with url: searching_path, method: :get, local: true do |f| %>
+       <%= f.text_field :name %>
+       <%= f.submit :search %>
+ 　　<% end %>
+ </div>
+ <div class="select_form">
  <%= render 'select_form' %>
+ </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
 
     <% @posts.each do |post| %>
-      <div>
+      <div class="col">
         <div class="card h-100">
          <div class="post-image">
           <%= link_to post_path(post.id) do %>
@@ -12,8 +23,8 @@
          </div>
           <div class="card-body text-center">
            <div class="column flex-direction:row">
-             <p class="card-title">店名：<%= post.name %></p>
-             <p>住所：<%= post.address %></p>
+             <p class="card-title"><strong>店名：</strong><%= post.name %></p>
+             <p><strong>住所：</strong><%= post.address %></p>
              <table>
                <tbody>
                  <tr>
@@ -25,10 +36,20 @@
                     <td id="favorite_buttons_<%= post.id %>">
                      <%= render "public/favorites/favorites", post: post %>
                     </td>
+                    <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
                  </tr>
                </tbody>
              </table>
-             <p>caption</p>
+             <script>
+                   $('.post-evaluation').raty({
+                     readOnly: true,
+                     score: function() {
+                       return $(this).attr('data-score');
+                     },
+                     path: '/assets/'
+                   });
+             </script>
+             <p><strong>caption</strong></p>
              <div><%= post.caption %></div>
            </div>
           </div>

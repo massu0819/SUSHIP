@@ -12,6 +12,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
@@ -42,10 +43,25 @@ class Public::PostsController < ApplicationController
     @posts = Post.sort(selection)
   end
 
+  def searching
+    if params[:name].present?
+      @posts = Post.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @posts = Post.none
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to posts_path
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:postimage, :name, :address, :caption, :customer_id)
+    params.require(:post).permit(:postimage, :name, :address, :caption, :customer_id, :evaluation)
   end
 
 end
