@@ -41,7 +41,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.name, post_path(post) %></td>
+        <td class="name"><%= link_to post.name, post_path(post) %></td>
         <td><%= post.address %></td>
         <td><%= post.favorites.count %></td>
         <td>コメント数: <%= post.comments.count %></td>

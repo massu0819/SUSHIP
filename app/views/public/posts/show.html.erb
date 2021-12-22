@@ -13,7 +13,7 @@
                <div class="card-body">
                  <p class="card-title"><strong>店名</strong>：<%= @post.name %></p>
                  <p><strong>住所</strong>：<%= @post.address %></p>
-                 <table>
+                 <table style="margin: auto;">
                    <tbody>
                      <tr>
                        <td><%= attachment_image_tag(@post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>

@@ -25,14 +25,19 @@
            <div class="column flex-direction:row">
              <p class="card-title"><strong>店名：</strong><%= post.name %></p>
              <p><strong>住所：</strong><%= post.address %></p>
-             <table>
+             <table style="margin: auto;">
                <tbody>
                  <tr>
                    <td><%= attachment_image_tag(post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>
                     <td><p class="card-title"><%= post.customer.nickname %></p></td>
                     <td>（<%= post.customer.age %>）</td>
                     <td><%= post.customer.gender %></td>
-
+                 </tr>
+               </tbody>
+             </table>
+             <table style="margin: auto;">
+               <tbody>
+                 <tr>
                     <td id="favorite_buttons_<%= post.id %>">
                      <%= render "public/favorites/favorites", post: post %>
                     </td>
@@ -40,15 +45,6 @@
                  </tr>
                </tbody>
              </table>
-             <script>
-                   $('.post-evaluation').raty({
-                     readOnly: true,
-                     score: function() {
-                       return $(this).attr('data-score');
-                     },
-                     path: '/assets/'
-                   });
-             </script>
              <p><strong>caption</strong></p>
              <div><%= post.caption %></div>
            </div>
@@ -56,5 +52,18 @@
         </div>
       </div>
     <%end%>
+
+    <script>
+                   $('.post-evaluation').raty({
+                     readOnly: true,
+                     score: function() {
+                       return $(this).attr('data-score');
+                     },
+                     path: '/assets/'
+                   });
+    </script>
+  </div>
+  <div style="color: white; margin: 30px 30%;background-color: rgba(0,0,0,0.5);">
+      <%= paginate @posts %>
   </div>
 </div>

@@ -16,7 +16,7 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><td><%= attachment_image_tag(customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td></td>
-        <td>
+        <td class="name">
           <%= link_to customer_path(customer.id) do %>
           　<%= customer.nickname %>
           <% end %>
