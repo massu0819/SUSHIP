@@ -228,22 +228,20 @@ form{
   }
 }
 
-.select_form{
-  form{
-
-    input{
-      margin-left: 0;
-    }
-  }
-}
-.searching{
+.search{
   form{
 
     input{
       margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-weight: 500;
     }
   }
 }
+
+
 .img-responsive {
   display: block;
   height: 100%;
