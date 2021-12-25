@@ -18,3 +18,17 @@ describe '投稿のテスト' do
     end
   end
 end
+
+describe "投稿画面(new_post_path)のテスト" do
+  before do
+    visit new_post_path
+   end
+  context '表示の確認' do
+    it 'new_post_pathが”/posts/new”であるか' do
+      expect(current_path).to eq('/posts/new')
+    end
+    it '投稿ボタンが表示されているか' do
+      expect(page).to have_button '投稿'
+    end
+  end
+end
