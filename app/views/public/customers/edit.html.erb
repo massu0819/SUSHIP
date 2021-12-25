@@ -6,7 +6,7 @@
     <%= form_with model:@customer, local:true do |f| %>
       <%= f.label :nickname, "ニックネーム" %>
       <%= f.text_field :nickname, autofocus: true %>
-      <%= attachment_image_tag @nickname, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+      <%= attachment_image_tag @customer, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
       <%= f.label :profile_image, "プロフィールイメージ" %>
       <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 
