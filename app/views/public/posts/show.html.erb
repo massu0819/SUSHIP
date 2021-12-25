@@ -34,7 +34,9 @@
                      score: function() {
                        return $(this).attr('data-score');
                      },
-                     path: '/assets/'
+                     starOff:  '<%= asset_path('star-off.png') %>',    //imagesフォルダより星画像の呼び出し
+                     starOn : '<%= asset_path('star-on.png') %>',
+                     starHalf: '<%= asset_path('star-half.png') %>',
                    });
                  </script>
                  <p><strong>caption</strong></p>
