@@ -3,7 +3,7 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
 <%#ソート投稿一覧%>
     <% @posts.each do |post| %>
-      <div class="col">
+      <div class="col" style="margin-bottom:10px;">
         <div class="card h-100">
          <div class="post-image">
           <%= link_to post_path(post.id) do %>
