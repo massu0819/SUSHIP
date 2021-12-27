@@ -1,37 +1,64 @@
 <div class="containers">
- <%= render 'select_form' %>
+ <div class="search"><%= render 'select_form' %></div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
 
     <% @posts.each do |post| %>
-      <div class="col-sm-5">
+      <div class="col">
         <div class="card h-100">
-         <%= link_to post_path(post.id) do %>
-          <%= attachment_image_tag post, :postimage, class:"card-img-top", class:"img-responsive" %>
-         <% end %>
+         <div class="post-image">
+          <%= link_to post_path(post.id) do %>
+           <%= attachment_image_tag post, :postimage, class:"card-img-top img-responsive" %>
+          <% end %>
+         </div>
           <div class="card-body text-center">
            <div class="column flex-direction:row">
-             <p class="card-title">店名：<%= post.name %></p>
-             <p>住所：<%= post.address %></p>
-             <table>
+             <p class="card-title"><strong>店名：</strong><%= post.name %></p>
+             <p><strong>住所：</strong><%= post.address %></p>
+             <table style="margin: auto;">
                <tbody>
                  <tr>
                    <td><%= attachment_image_tag(post.customer, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size:"40x40" ) %></td>
-                    <td><p class="card-title"><%= post.customer.nickname %></p></td>
+                    <td>
+                     <p class="card-title">
+                      <%= link_to customer_path(post.customer.id) do %>
+                       <%= post.customer.nickname %>
+                      <% end %>
+                     </p>
+                    </td>
                     <td>（<%= post.customer.age %>）</td>
                     <td><%= post.customer.gender %></td>
-
-                    <td id="favorite_buttons_<%= post.id %>">
-                     <%= render "public/favorites/favorites", post: post %>
-                    </td>
                  </tr>
                </tbody>
              </table>
-             <p>caption</p>
+             <table style="margin: auto;">
+               <tbody>
+                 <tr>
+                    <td id="favorite_buttons_<%= post.id %>">
+                     <%= render "public/favorites/favorites", post: post %>
+                    </td>
+                    <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
+                 </tr>
+               </tbody>
+             </table>
+             <p><strong>caption</strong></p>
              <div><%= post.caption %></div>
            </div>
           </div>
         </div>
       </div>
     <%end%>
+
+    <script>
+                   $('.post-evaluation').raty({
+                     readOnly: true,
+                     score: function() {
+                       return $(this).attr('data-score');
+                     },
+                     starOff:  '<%= asset_path('star-off.png') %>',    //imagesフォルダより星画像の呼び出し
+                     starOn : '<%= asset_path('star-on.png') %>',
+                     starHalf: '<%= asset_path('star-half.png') %>',
+
+                   });
+    </script>
   </div>
 </div>
