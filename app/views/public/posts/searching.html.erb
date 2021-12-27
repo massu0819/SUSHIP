@@ -2,6 +2,7 @@
  <div style="text-align: center; margin: 30px 0; color: white; background-color: rgba(0,0,0,0.5);">
   <h1><strong>POSTS</strong></h1>
  </div>
+ <%#検索フォーム・ソート%>
  <table style="margin-bottom: 20px;">
    <div class="searching">
     <tbody>
@@ -23,7 +24,7 @@
   </table>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
-
+<%#検索結果一覧%>
     <% @posts.each do |post| %>
       <div class="col">
         <div class="card h-100">

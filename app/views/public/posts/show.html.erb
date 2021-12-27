@@ -3,13 +3,10 @@
      <div style="text-align: center; margin: 30px 0; color: white; background-color: rgba(0,0,0,0.5);">
        <h1><strong>投稿詳細</strong></h1>
      </div>
+     <%#投稿詳細時%>
      <div class="main">
-        <!--新着投稿3つ-->
-         <!--<div class="col-12 col-md-6 col-lg-4">-->
            <div class="card">
-             <!--<img class="card-img-top" src="https://picsum.photos/30/20.jpg" alt="画像">-->
              <%= attachment_image_tag @post, :postimage, class: "bd-placeholder-img card-img-top" %>
-             <!--, size: "180x120"-->
                <div class="card-body">
                  <p class="card-title"><strong>店名</strong>：<%= @post.name %></p>
                  <p><strong>住所</strong>：<%= @post.address %></p>
